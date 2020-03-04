@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <interviewLabel>Update Account Support Tiers {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update Account Support Tiers</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>Get_Support_Tier_Config</name>
+        <label>Get Support Tier Config</label>
+        <locationX>244</locationX>
+        <locationY>50</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Gold_Accounts</targetReference>
+        </connector>
+        <object>Support_Tier__mdt</object>
+        <outputReference>Support_Tier_Var</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Default_Discount__c</queriedFields>
+        <queriedFields>DeveloperName</queriedFields>
+        <queriedFields>Label</queriedFields>
+        <queriedFields>Minimum_Spending__c</queriedFields>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Gold_Accounts</name>
+        <label>Update Gold Accounts</label>
+        <locationX>427</locationX>
+        <locationY>50</locationY>
+        <filters>
+            <field>Total_Spending__c</field>
+            <operator>GreaterThanOrEqualTo</operator>
+            <value>
+                <elementReference>Support_Tier_Var.Minimum_Spending__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Support_Tier__c</field>
+            <value>
+                <stringValue>Gold</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Get_Support_Tier_Config</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>Support_Tier_Var</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Support_Tier__mdt</objectType>
+    </variables>
+</Flow>
