@@ -2,6 +2,10 @@
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <customMetadataTypeAccesses>
         <enabled>true</enabled>
+        <name>Support_Level_Mapping__mdt</name>
+    </customMetadataTypeAccesses>
+    <customMetadataTypeAccesses>
+        <enabled>true</enabled>
         <name>Support_Tier__mdt</name>
     </customMetadataTypeAccesses>
     <customMetadataTypeAccesses>
