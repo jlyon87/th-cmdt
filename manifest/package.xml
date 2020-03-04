@@ -17,7 +17,12 @@
     <types>
         <members>Support_Tier__mdt</members>
         <members>VAT_Data__mdt</members>
+        <members>Support_Product__c</members>
         <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Support_Product__c</members>
+        <name>CustomTab</name>
     </types>
     <types>
         <members>Update_Account_Support_Tiers</members>
@@ -29,6 +34,10 @@
         <members>Account-Account (Support) Layout</members>
         <members>Account-Account Layout</members>
         <name>Layout</name>
+    </types>
+    <types>
+        <members>Support</members>
+        <name>PermissionSet</name>
     </types>
     <types>
         <members>Account.Minimum_Spending_Validation</members>

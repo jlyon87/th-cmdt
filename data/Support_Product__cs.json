@@ -1,0 +1,28 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Support_Product__c",
+                "referenceId": "Support_Product__cRef1"
+            },
+            "Name": "Online Chat",
+            "Support_Level__c": "Premium"
+        },
+        {
+            "attributes": {
+                "type": "Support_Product__c",
+                "referenceId": "Support_Product__cRef2"
+            },
+            "Name": "Dedicated Phone Line",
+            "Support_Level__c": "VIP"
+        },
+        {
+            "attributes": {
+                "type": "Support_Product__c",
+                "referenceId": "Support_Product__cRef3"
+            },
+            "Name": "Email Support",
+            "Support_Level__c": "Free"
+        }
+    ]
+}
